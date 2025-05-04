@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro de Pessoas</title>
+</head>
+<body>
+
+    <h1>Cadastro de Pessoas</h1>
+
+    <form id="formPessoa">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" required><br><br>
+
+        <label for="idade">Idade:</label>
+        <input type="number" id="idade" required><br><br>
+
+        <label for="altura">Altura (m):</label>
+        <input type="number" step="0.01" id="altura" required><br><br>
+
+        <label for="peso">Peso (kg):</label>
+        <input type="number" id="peso" required><br><br>
+
+        <button type="submit">Cadastrar Pessoa</button>
+    </form>
+
+    <h2>Lista de Pessoas</h2>
+    <div id="listaPessoas"></div>
+
+    <script src="./view.js"></script> <!-- O view.ts compilado -->
+</body>
+</html>
