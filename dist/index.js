@@ -4,8 +4,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const Pessoa_1 = require("./Pessoa");
+const Produto_1 = require("./Produto");
 const GerenciadorPessoas_1 = require("./GerenciadorPessoas");
+const GerenciadorProdutos_1 = require("./GerenciadorProdutos");
 const pessoas_json_1 = __importDefault(require("./pessoas.json")); // Importa o JSON
+const produtos_json_1 = __importDefault(require("./produtos.json")); // Importa o JSON de produtos
 // Instância do gerenciador
 const gerenciador = new GerenciadorPessoas_1.GerenciadorPessoas();
 //Criando pessoa
@@ -36,4 +39,13 @@ if(sucesso){
 }
     gerenciador.listarPessoas(); // Verifica a edição feita
 */
+// Instância do gerenciador de produtos
+const gerenciadorProdutos = new GerenciadorProdutos_1.GerenciadorProdutos();
+// Adicionando produtos do JSON ao gerenciador
+produtos_json_1.default.forEach((produto) => {
+    const novoProduto = new Produto_1.Produto(produto.id, produto.nome, produto.preco, produto.estoque);
+    gerenciadorProdutos.adicionarProduto(novoProduto);
+});
+// Listando todos os produtos
+gerenciadorProdutos.listarProdutos();
 //# sourceMappingURL=index.js.map

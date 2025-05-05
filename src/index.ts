@@ -1,6 +1,10 @@
 import { Pessoa } from "./Pessoa";
+import { Produto } from "./Produto";
 import { GerenciadorPessoas } from "./GerenciadorPessoas";
+import { GerenciadorProdutos } from "./GerenciadorProdutos";
+
 import pessoasData from "./pessoas.json"; // Importa o JSON
+import produtosData from "./produtos.json"; // Importa o JSON de produtos
 
 // Instância do gerenciador
 const gerenciador = new GerenciadorPessoas();
@@ -40,3 +44,15 @@ if(sucesso){
     gerenciador.listarPessoas(); // Verifica a edição feita
 */
 
+
+// Instância do gerenciador de produtos
+const gerenciadorProdutos = new GerenciadorProdutos();
+
+// Adicionando produtos do JSON ao gerenciador
+produtosData.forEach((produto) => {
+    const novoProduto = new Produto(produto.id, produto.nome, produto.preco, produto.estoque);
+    gerenciadorProdutos.adicionarProduto(novoProduto);
+});
+
+// Listando todos os produtos
+gerenciadorProdutos.listarProdutos();
