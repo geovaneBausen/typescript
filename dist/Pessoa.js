@@ -2,19 +2,31 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Pessoa = void 0;
 class Pessoa {
-    // Construtor
-    constructor(nomePessoa, idadePessoa, alturaPessoa, pesoPessoa) {
-        this.nomePessoa = nomePessoa;
-        this.idadePessoa = idadePessoa;
-        this.alturaPessoa = alturaPessoa;
-        this.pesoPessoa = pesoPessoa;
+    constructor(nome, idade, altura, peso, ativo) {
+        this.nome = nome;
+        this.idade = idade;
+        this.altura = altura;
+        this.peso = peso;
+        this.ativo = ativo; // Inicializa a propriedade
     }
-    getNome() { return this.nomePessoa; }
-    getIdade() { return this.idadePessoa; }
-    getAltura() { return this.alturaPessoa; }
-    getPeso() { return this.pesoPessoa; }
+    // Métodos getters para acessar as propriedades
+    getNome() {
+        return this.nome;
+    }
+    getIdade() {
+        return this.idade;
+    }
+    getAltura() {
+        return this.altura;
+    }
+    getPeso() {
+        return this.peso;
+    }
+    getAtivo() {
+        return this.ativo;
+    }
     toString() {
-        return `Pessoa { Nome: ${this.nomePessoa}, Idade: ${this.idadePessoa}, Altura: ${this.alturaPessoa}, Peso: ${this.pesoPessoa} }`;
+        return `Pessoa { Nome: ${this.nome}, Idade: ${this.idade}, Altura: ${this.altura}, Peso: ${this.peso}, Ativa: ${this.ativo} }`;
     }
 }
 exports.Pessoa = Pessoa;

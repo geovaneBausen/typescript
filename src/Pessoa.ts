@@ -1,24 +1,40 @@
 export class Pessoa {
-    // Dados da Nova Pessoa em TypeScript
-    private nomePessoa: string;
-    private idadePessoa: number;
-    private alturaPessoa: number;
-    private pesoPessoa: number;
+    private nome: string;
+    private idade: number;
+    private altura: number;
+    private peso: number;
+    private ativo: boolean; // Nova propriedade
 
-    // Construtor
-    constructor(nomePessoa: string, idadePessoa: number, alturaPessoa: number, pesoPessoa: number) {
-        this.nomePessoa = nomePessoa;
-        this.idadePessoa = idadePessoa;
-        this.alturaPessoa = alturaPessoa;
-        this.pesoPessoa = pesoPessoa;
+    constructor(nome: string, idade: number, altura: number, peso: number, ativo: boolean) {
+        this.nome = nome;
+        this.idade = idade;
+        this.altura = altura;
+        this.peso = peso;
+        this.ativo = ativo; // Inicializa a propriedade
     }
-    getNome(): string { return this.nomePessoa; }
-    getIdade(): number { return this.idadePessoa; }
-    getAltura(): number { return this.alturaPessoa; }
-    getPeso(): number { return this.pesoPessoa; }
-   
 
-    public toString(): string {
-        return `Pessoa { Nome: ${this.nomePessoa}, Idade: ${this.idadePessoa}, Altura: ${this.alturaPessoa}, Peso: ${this.pesoPessoa} }`;
+    // Métodos getters para acessar as propriedades
+    getNome(): string {
+        return this.nome;
+    }
+
+    getIdade(): number {
+        return this.idade;
+    }
+
+    getAltura(): number {
+        return this.altura;
+    }
+
+    getPeso(): number {
+        return this.peso;
+    }
+
+    getAtivo(): boolean {
+        return this.ativo;
+    }
+
+    toString(): string {
+        return `Pessoa { Nome: ${this.nome}, Idade: ${this.idade}, Altura: ${this.altura}, Peso: ${this.peso}, Ativa: ${this.ativo} }`;
     }
 }

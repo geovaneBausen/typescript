@@ -1,0 +1,6 @@
+[
+    { "nome": "João", "idade": 25, "altura": 1.75, "peso": 70, "ativo": true },
+    { "nome": "Maria", "idade": 30, "altura": 1.65, "peso": 60, "ativo": true },
+    { "nome": "Carlos", "idade": 20, "altura": 1.80, "peso": 80, "ativo": false },
+    { "nome": "Ana", "idade": 28, "altura": 1.70, "peso": 65, "ativo": true }
+]
