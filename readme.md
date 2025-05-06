@@ -9,4 +9,4 @@ carregamento do json
 // para cada objeto do JSON, cria uma instância de Pessoa e adiciona ao gerenciador
 
 ## 📗Armazenamento em memória
-A classe GerenciadorPessoas mantém internamente um array (private pessoas: Pessoa[] = []) e o método adicionarPessoa()  faz um push() nesse array:
+A classe GerenciadorPessoas mantém internamente um array (private pessoas: Pessoa[] = []) e o método adicionarPessoa()  faz um push() nesse array
