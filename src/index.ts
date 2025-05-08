@@ -1,58 +1,27 @@
-import { Pessoa } from "./Pessoa";
-import { Produto } from "./Produto";
-import { GerenciadorPessoas } from "./GerenciadorPessoas";
-import { GerenciadorProdutos } from "./GerenciadorProdutos";
+import { StatusEnum } from "./StatusEnum";
+import { Caixa } from "./Caixa";
+import { Cliente } from "./Cliente";
+import { Pedido } from "./Pedido";
+import { Cozinheiro } from "./Cozinheiro";
 
-import pessoasData from "./pessoas.json"; // Importa o JSON
-import produtosData from "./produtos.json"; // Importa o JSON de produtos
+// Criando pessoas no sistema
+const cliente = new Cliente("João", "Rua das Flores", 123456789);
+const caixa = new Caixa("Ana", "Manhã");
+const cozinheiro = new Cozinheiro("Carlos", "Comida japonesa");
 
-// Instância do gerenciador
-const gerenciador = new GerenciadorPessoas();
+// Cliente realiza o pedido
+cliente.realizarPedido();
 
- //Criando pessoa
-//(nome, idade, altura e peso)
-const GeovaneBausen = new Pessoa('GeoAdm', 27, 1.87, 80, true);
+// Criar pedido e adicionar itens
+const pedido = new Pedido(101, StatusEnum.ABERTO);
+pedido.addItem(1, 2, 20); // (produtoId, qtd, preco)
 
-// Adicionando pessoas ao gerenciador
-gerenciador.adicionarPessoa(GeovaneBausen);
+// Caixa processa pagamento
+const valorTotal = pedido.calcularTotal();
+caixa.receberPagamento(valorTotal);
 
-// Adicionando pessoas do JSON ao gerenciador
-pessoasData.forEach((pessoa) => {
-    const novaPessoa = new Pessoa(pessoa.nome, pessoa.idade, pessoa.altura, pessoa.peso, pessoa.ativo);
-    gerenciador.adicionarPessoa(novaPessoa);
-});
+// Cozinheiro prepara os itens
+cozinheiro.prepararProduto();
 
-// Listando todas as pessoas
-gerenciador.listarPessoas();
-
- //Exemplo de buscar e remover
-const busca = gerenciador.buscarPessoa("Maria");
-console.log("Pessoa encontrada:", busca?.toString());
-
-gerenciador.removerPessoa("Carlos");
-gerenciador.listarPessoas(); // Verifica a remoção
-
-/*
-// Edita a pessoa
-const sucesso = gerenciador.editarPessoa("Ana", new Pessoa("Ana Bo", 29, 1.72, 64));
-
-if(sucesso){
-    console.log("Pessoa editada com sucesso!");
-}else{
-    console.log("Pessoa não encontrada!");
-}
-    gerenciador.listarPessoas(); // Verifica a edição feita
-*/
-
-
-// Instância do gerenciador de produtos
-const gerenciadorProdutos = new GerenciadorProdutos();
-
-// Adicionando produtos do JSON ao gerenciador
-produtosData.forEach((produto) => {
-    const novoProduto = new Produto(produto.id, produto.nome, produto.preco, produto.estoque);
-    gerenciadorProdutos.adicionarProduto(novoProduto);
-});
-
-// Listando todos os produtos
-gerenciadorProdutos.listarProdutos();
+// Pedido concluído
+pedido.status = StatusEnum.FECHADO;

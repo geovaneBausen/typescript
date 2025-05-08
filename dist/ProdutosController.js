@@ -95,7 +95,6 @@ function adicionarOuAtualizarProduto(event) {
     // Atualiza a lista na interface
     atualizarListaProdutos();
     // Exporta para JSON (preparando para envio ao banco de dados)
-    exportarProdutosParaJSON();
 }
 // Função para buscar produto
 function buscarProduto() {

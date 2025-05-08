@@ -1,0 +1,1 @@
+{"version":3,"file":"Cozinheiro.js","sourceRoot":"","sources":["../src/Cozinheiro.ts"],"names":[],"mappings":";;;AAAA,qCAAkC;AAElC,aAAa;AACb,MAAa,UAAW,SAAQ,eAAM;IAClC,YAAY,IAAY,EAAS,aAAqB;QAClD,KAAK,CAAC,IAAI,CAAC,CAAC;QADiB,kBAAa,GAAb,aAAa,CAAQ;IAEtD,CAAC;IAED,eAAe;QACX,OAAO,CAAC,GAAG,CAAC,yCAAyC,IAAI,CAAC,aAAa,EAAE,CAAC,CAAC;IAC/E,CAAC;CACJ;AARD,gCAQC"}
