@@ -1,11 +1,16 @@
+/*
 import { StatusEnum } from "./StatusEnum";
 import { Caixa } from "./Caixa";
 import { Cliente } from "./Cliente";
 import { Pedido } from "./Pedido";
 import { Cozinheiro } from "./Cozinheiro";
+import { tarefaConcluida } from "./teste";
 
-// Criando pessoas no sistema
+// intstância de Cliente
 const cliente = new Cliente("João", "Rua das Flores", 123456789);
+
+// Criar instâncias de Caixa e Cozinheiro
+// e atribuir valores
 const caixa = new Caixa("Ana", "Manhã");
 const cozinheiro = new Cozinheiro("Carlos", "Comida japonesa");
 
@@ -25,3 +30,39 @@ cozinheiro.prepararProduto();
 
 // Pedido concluído
 pedido.status = StatusEnum.FECHADO;
+
+
+///teste de tipos grandes
+const resultado = tarefaConcluida(true);
+console.log(resultado);
+
+const numeroGrande: bigint = 1234567890123456789012345678901234567890n; // Literal BigInt com 'n' no final
+const outroNumeroGrande: bigint = BigInt("9876543210987654321098765432109876543210"); // Usando BigInt()
+
+console.log(numeroGrande);
+console.log(outroNumeroGrande);
+*/
+
+//usando tulplas com Spread Operator
+let listaFrutas: [string, ...string[]] = ["laranja", "pera", "uva"];
+console.log(...listaFrutas);
+
+//lista heterogenea de tuplas
+let listaDeFrutas2: [number, boolean, ...string[]] = [5, true, ...listaFrutas];
+console.log(listaDeFrutas2);
+
+//usando tulplas em função
+function listarPessoas(nomes: String [], idades: number[]){
+    return [...nomes, ...idades]
+}
+let resultado = listarPessoas(['Geo', 'Jurema'], [24, 65]);
+console.log(resultado)
+
+//Labled Tulples com Spreed operator numa função
+type Nome = |[primeiroNome: string, sobrenome:string]
+            |[primeiroNome: string, nomeMeio:String, sobrenome:string]
+
+function CriarPessoa(...nome:Nome){
+        return[...nome];
+}
+console.log(CriarPessoa("geo", "bausen"));
